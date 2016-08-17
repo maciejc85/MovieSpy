@@ -1,7 +1,22 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { Routes, RouterModule }   from '@angular/router';
+import {HomeComponent} from "./components/home/home"
 
-export const routes: RouterConfig = [];
-
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
+const appRoutes: Routes = [
+ { path: 'home', component: HomeComponent },
+  {
+    path: 'route1',
+    component: HomeComponent,
+    data: {
+      title: 'route1 List'
+    }
+  },
+  { path: 'route1/:id', component: HomeComponent },
+  { path: '**', component: HomeComponent }
 ];
+
+
+export const appRoutingProviders: any[] = [
+
+];
+
+export const routing = RouterModule.forRoot(appRoutes);
