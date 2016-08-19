@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import {SidenavComponent } from './components/sidenav/sidenav';
+import {SidenavComponent } from "./components/sidenav/sidenav";
 
 @Component({
   selector: "my-app",

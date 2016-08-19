@@ -9,11 +9,11 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   animations: [
     trigger('navLinkState', [
       state('inactive', style({
-        transform: 'scale(1)'
+        "font-size" : "15px" 
       })),
       state('active',   style({
         backgroundColor: '#009688',
-        transform: 'scale(1.2)'
+        "font-size" : "25px" 
       })),
       transition('inactive => active', animate('100ms ease-in')),
       transition('active => inactive', animate('100ms ease-out'))
