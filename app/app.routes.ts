@@ -1,8 +1,14 @@
 import { Routes, RouterModule }   from '@angular/router';
-import {HomeComponent} from "./components/home/home"
+import {HomeComponent} from "./components/home/home";
+import {DetailsComponent} from "./components/details/details";
+import {DashboardComponent} from "./components/dashboard/dashboard";
+import {SearchComponent} from "./components/search/search";
 
 const appRoutes: Routes = [
  { path: 'home', component: HomeComponent },
+ { path: 'details', component: DetailsComponent },
+ { path: 'dashboard', component: DashboardComponent },
+ { path: 'search', component: SearchComponent },
   {
     path: 'route1',
     component: HomeComponent,
