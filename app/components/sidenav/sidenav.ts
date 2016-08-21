@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
   selector: 'sidenav',
   templateUrl: 'app/components/sidenav/sidenav.html',
-  //styleUrls: ['app/components/sidenav/sidenav.css'],
+  styleUrls: ['app/components/sidenav/sidenav.css'],
   directives: [ROUTER_DIRECTIVES],
   animations: [
     trigger('navLinkState', [
@@ -12,7 +12,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
         "font-size" : "15px" 
       })),
       state('active',   style({
-        backgroundColor: '#009688',
+        backgroundColor: '#369',
         "font-size" : "25px" 
       })),
       transition('inactive => active', animate('100ms ease-in')),

@@ -4,9 +4,8 @@ import {SidenavComponent } from "./components/sidenav/sidenav";
 
 @Component({
   selector: "my-app",
-  template: "<h1>Movie Spy seed</h1>" +
-            "<sidenav></sidenav>" +
-            "<router-outlet></router-outlet>",
+  templateUrl: 'app/app.component.html',
+  styleUrls: ['app/app.component.css'],
   directives: [ SidenavComponent ]
 })
 export class AppComponent {
