@@ -8,8 +8,8 @@ const tscConfig = require('./tsconfig.json');
 
 
 // clean the contents of the distribution directory
-gulp.task('clean', function () {
-    return del('dist/**/*');
+gulp.task('clean', function (cb) {
+    return del(['dist/**/*', '!dist/node_modules/**/*'], { dot: true }, cb);
 });
 
 // TypeScript compile
@@ -49,6 +49,21 @@ gulp.task('tslint', ['clean'], function () {
         }))
         .pipe(tslint.report());
 });
+
+// A development task to run anytime a file changes
+gulp.task('watch', function() {
+ gulp.watch('app/**/*', ['watch-code-reload', 'watch-sass-reload']);
+});
+gulp.task('watch-code-reload', function () {
+    return gulp.src(['app/**/*', '!app/**/*.sass', 'index.html', 'styles.css', 'bootstrap.css', '*.js', '*.json'], { base: './' })
+        .pipe(gulp.dest('dist'))
+});
+gulp.task('watch-sass-reload', function () {
+  return gulp.src('app/**/*.sass')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest('dist/app'));
+});
+
 
 gulp.task('build', ['tslint', 'compile', 'copy:libs', 'copy:assets', 'sass']);
 gulp.task('quickbuild', ['compile', 'copy:libs', 'copy:assets', 'sass']);
