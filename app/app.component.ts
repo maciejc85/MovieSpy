@@ -11,6 +11,6 @@ import {SidenavComponent } from "./components/sidenav/sidenav";
 export class AppComponent {
   constructor() { };
 
-  x: any = 1;
+  x: any = 2;
 
 }

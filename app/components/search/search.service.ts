@@ -9,15 +9,20 @@ export class SearchService{
 
   private searchUrl = 'http://www.omdbapi.com/'; //'app/components/search/search.json?v=1'; //
 
+
+
   searchMovies (searchQuery : string): Observable<any> {
-    return this.http.get(this.searchUrl + '?t=' + searchQuery) 
-                    .map(this.extractData);
-                    //.catch(this.handleError);
+      //return new Observable<any>();
+      return this.http.get(this.searchUrl + '?t=' + searchQuery) 
+                      .map(this.extractData);
   }
+  
   private extractData(res: Response) {
-    let body = res.json();
-    return body || { };
+      let body = res.json();
+      return body || { };
   }
+
+
   private handleError (error: any) {
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';

@@ -31,6 +31,7 @@
     "bootstrap": "^3.3.6"
   },
   "devDependencies": {
+    "@angular/forms": "^0.3.0",
     "concurrently": "^2.0.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
