@@ -1,4 +1,19 @@
-<div class="sideNav">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" (click)="click($event)">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Movie Spy</a>
+    </div>
+  </div>
+
+</nav>
+
+<div class="sideNav" *ngIf="isOpen">
     <div class="sideNavItem" *ngFor="let item of navItems" @navLinkState="item.state">
         <button type="button" class="btn btn-primary btn-lg btn-block"
         [routerLink]="[item.route]" (click)="item.toggleState()" (click)="onSelect(item)">{{item.name}}</button>

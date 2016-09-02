@@ -22,6 +22,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 })
 export class SidenavComponent {
 
+  isOpen: string;
+
   navItems: NavItem[] = [
     new NavItem(0, "Home", "home", "active"),
     new NavItem(1, "Dashboard", "dashboard", "inactive"),
@@ -35,6 +37,11 @@ export class SidenavComponent {
         if (element.id !== item.id)
           element.state = 'inactive';
       });
+  }
+
+  click = function(event: any){
+    console.log(event);
+    this.isOpen = (this.isOpen === 'true') ? 'true' : '';
   }
 
 };
