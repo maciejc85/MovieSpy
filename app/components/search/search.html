@@ -1,8 +1,34 @@
-<h3>Search</h3>
-<div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-4">Search:</div>
-  <div class="col-xs-12 col-sm-6 col-md-4"><input [(ngModel)]="search.searchQuery" placeholder="Search..." class=""></div>
-  <div class="col-xs-12 col-sm-6 col-md-4"><button (click)="onSubmit()" type="submit" class="btn btn-default">Search</button></div>
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li class="active">Search</li>
+</ol>
 
-  <div class="col-xs-12">{{ search.response.Title }}</div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" (click)="onSubmit()">Search!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="search.searchQuery">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
+
+<div class="panel panel-default" *ngIf="search.response.Title">
+  <div class="panel-heading">{{ search.response.Title }}</div>
+  <div class="panel-body">
+    <p>{{ search.response.Plot }}</p>
+  </div>
+
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item">{{ search.response.Actors }}</li>
+    <li class="list-group-item">{{ search.response.Released }}</li>
+    <li class="list-group-item">{{ search.response.Genre }}</li>
+    <li class="list-group-item">{{ search.response.Awards }}</li>
+    <li class="list-group-item">{{ search.response.Language }}</li>
+  </ul>
+
+  <img src="{{ search.response.Poster }}" class="img-responsive">
+
 </div>
