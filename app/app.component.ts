@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 
-import {SidenavComponent } from "./components/sidenav/sidenav";
+import {TopnavComponent } from "./components/topnav/topnav";
 
 @Component({
   selector: "my-app",
   templateUrl: 'app/app.component.html',
   styleUrls: ['app/app.component.css'],
-  directives: [ SidenavComponent ]
+  directives: [ TopnavComponent ]
 })
 export class AppComponent {
   constructor() { };

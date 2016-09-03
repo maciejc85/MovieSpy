@@ -52,7 +52,16 @@ gulp.task('tslint', ['clean'], function () {
 
 // A development task to run anytime a file changes
 gulp.task('watch', function() {
- gulp.watch('app/**/*', ['watch-code-reload', 'watch-sass-reload']);
+ gulp.watch('app/**/*', ['watch-compile', 'watch-code-reload', 'watch-sass-reload']);
+});
+
+gulp.task('watch-compile', function () {
+    return gulp
+        .src('app/**/*.ts')
+        .pipe(sourcemaps.init())          // <--- sourcemaps
+        .pipe(typescript(tscConfig.compilerOptions))
+        .pipe(sourcemaps.write('.'))      // <--- sourcemaps
+        .pipe(gulp.dest('dist/app'));
 });
 gulp.task('watch-code-reload', function () {
     return gulp.src(['app/**/*', '!app/**/*.sass', 'index.html', 'styles.css', 'bootstrap.css', '*.js', '*.json'], { base: './' })
@@ -63,7 +72,7 @@ gulp.task('watch-sass-reload', function () {
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest('dist/app'));
 });
-
+// end of watch tasks
 
 gulp.task('build', ['tslint', 'compile', 'copy:libs', 'copy:assets', 'sass']);
 gulp.task('quickbuild', ['compile', 'copy:libs', 'copy:assets', 'sass']);

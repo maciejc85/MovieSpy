@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" (click)="click($event)">
+      <button type="button" class="navbar-toggle collapsed" (click)="onNavToggle($event)">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -10,12 +10,10 @@
       <a class="navbar-brand" href="#">Movie Spy</a>
     </div>
   </div>
-
 </nav>
-
-<div class="sideNav" *ngIf="isOpen === 'true'">
-    <div class="sideNavItem" *ngFor="let item of navItems" @navLinkState="item.state">
+<div class="topNav" @navLinkState="navDrawer.navState">
+    <div class="topNavItem" *ngFor="let item of navDrawer.navItems">
         <button type="button" class="btn btn-primary btn-lg btn-block"
-        [routerLink]="[item.route]" (click)="item.toggleState()" (click)="onSelect(item)">{{item.name}}</button>
+        [routerLink]="[item.route]">{{item.name}}</button>
     </div>
 </div>
