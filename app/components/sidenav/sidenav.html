@@ -13,7 +13,7 @@
 
 </nav>
 
-<div class="sideNav" *ngIf="isOpen">
+<div class="sideNav" *ngIf="isOpen === 'true'">
     <div class="sideNavItem" *ngFor="let item of navItems" @navLinkState="item.state">
         <button type="button" class="btn btn-primary btn-lg btn-block"
         [routerLink]="[item.route]" (click)="item.toggleState()" (click)="onSelect(item)">{{item.name}}</button>

@@ -41,7 +41,7 @@ export class SidenavComponent {
 
   click = function(event: any){
     console.log(event);
-    this.isOpen = (this.isOpen === 'true') ? 'true' : '';
+    this.isOpen = (this.isOpen === 'true') ? 'false' : 'true';
   }
 
 };
