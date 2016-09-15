@@ -11,7 +11,7 @@
     </div>
   </div>
 </nav>
-<div class="topNav" @navLinkState="navDrawer.navState">
+<div class="topNav" [@navLinkState]="navDrawer.navState">
     <div class="topNavItem" *ngFor="let item of navDrawer.navItems">
         <button type="button" class="btn btn-primary btn-lg btn-block"
         [routerLink]="[item.route]">{{item.name}}</button>

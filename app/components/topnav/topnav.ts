@@ -1,11 +1,10 @@
 import { Component, Input, trigger, state, style, transition, animate } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+//import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'topnav',
   templateUrl: 'app/components/topnav/topnav.html',
   styleUrls: ['app/components/topnav/topnav.css'],
-  directives: [ROUTER_DIRECTIVES],
   animations: [
     trigger('navLinkState', [
       state('closed', style({

@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { NgForm } from '@angular/forms';
 import { SearchService } from './search.service';
-//import { MovieFactoryService } from './movie.factory';
 
 @Component({
     selector: "search",
