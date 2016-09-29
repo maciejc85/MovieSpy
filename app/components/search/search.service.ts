@@ -10,7 +10,7 @@ export class SearchService{
 
   private searchUrl = 'http://www.omdbapi.com/'; //'app/components/search/search.json?v=1'; //
 
-
+  public searchHistory = [];
 
   searchMovies (searchQuery : string): Observable<any> {
       //return new Observable<any>();

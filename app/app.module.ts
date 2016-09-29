@@ -11,6 +11,7 @@ import { SearchComponent } from "./components/search/search";
 import { DetailsComponent } from "./components/details/details";
 import { DashboardComponent } from "./components/dashboard/dashboard";
 
+
 @NgModule({
   imports: [BrowserModule, routing, FormsModule, HttpModule],
   declarations: [ AppComponent, 

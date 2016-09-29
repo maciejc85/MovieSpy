@@ -6,7 +6,7 @@ import { SearchService } from './search.service';
     selector: "search",
     templateUrl: "app/components/search/search.html",
     styleUrls: ["app/components/search/search.css"],
-    providers: [SearchService]
+    //providers: [SearchService]
 })
 export class SearchComponent implements OnInit {
 
@@ -22,7 +22,8 @@ export class SearchComponent implements OnInit {
             .subscribe(
             response => {
                 this.search.response = response;
-                console.log(this.search.response);
+                this.searchService.searchHistory.push(response);
+                console.log(this.searchService.searchHistory);
             },
             error => { this.search.error = <any>error; console.log(error); });
     }
