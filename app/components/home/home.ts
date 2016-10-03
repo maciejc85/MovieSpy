@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { SearchService } from '../search/search.service';
+import { TileComponents } from '../tile/tile'
 
 @Component({
   selector: 'home',
