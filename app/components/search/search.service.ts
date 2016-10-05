@@ -4,27 +4,30 @@ import { Observable }     from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
 @Injectable()
-export class SearchService{
+export class SearchService {
 
-  constructor (private http: Http) {}
+  constructor(private http: Http) { }
 
-  private searchUrl = 'http://www.omdbapi.com/'; //'app/components/search/search.json?v=1'; //
-
+  private searchUrl = 'app/api/movie.json' //'http://www.omdbapi.com/';
   public searchHistory = [];
 
-  searchMovies (searchQuery : string): Observable<any> {
-      //return new Observable<any>();
-      return this.http.get(this.searchUrl + '?t=' + searchQuery) 
-                      .map(this.extractData);
+  searchMovies(searchQuery: string): Observable<any> {
+    //return new Observable<any>();
+    return this.http.get(this.searchUrl + '?t=' + searchQuery)
+      .map(this.extractData);
   }
-  
+
+  getMovies(searchQuery: string): Observable<any> {
+    return this.http.get('app/api/movies.json').map(this.extractData);
+  }
+
   private extractData(res: Response) {
-      let body = res.json();
-      return body || { };
+    let body = res.json();
+    return body || {};
   }
 
 
-  private handleError (error: any) {
+  private handleError(error: any) {
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead

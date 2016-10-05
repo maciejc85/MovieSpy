@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SearchService } from '../search/search.service';
 import { TileComponents } from '../tile/tile'
 
@@ -8,12 +8,25 @@ import { TileComponents } from '../tile/tile'
   styleUrls: ['app/components/home/home.css'],
   //providers: [SearchService]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  constructor(private searchService : SearchService){
-      console.log(searchService.searchHistory);
+  constructor(private searchService: SearchService) {
+
+
+    console.log(searchService.searchHistory);
+
+
+
   }
 
+  ngOnInit() {
+
+    this.searchService.getMovies('').subscribe(
+      response => {
+        this.searchService.searchHistory = response;
+      },
+      error => { console.log(error); });
+  }
 
 
 }

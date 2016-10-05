@@ -64,7 +64,7 @@ gulp.task('watch-compile', function () {
         .pipe(gulp.dest('dist/app'));
 });
 gulp.task('watch-code-reload', function () {
-    return gulp.src(['app/**/*', '!app/**/*.sass', 'index.html', 'styles.css', 'bootstrap.css', '*.js', '*.json'], { base: './' })
+    return gulp.src(['app/**/*', '!app/**/*.sass', 'index.html', 'styles.css', 'bootstrap.css', '*.js', '*.json', 'api/**/*'], { base: './' })
         .pipe(gulp.dest('dist'))
 });
 gulp.task('watch-sass-reload', function () {
