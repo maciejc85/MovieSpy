@@ -1,34 +1,50 @@
-<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li class="active">Search</li>
-</ol>
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li class="active">Search</li>
+  </ol>
 
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button" (click)="onSubmit()">Search!</button>
-      </span>
-      <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="search.searchQuery">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" placeholder="Search for..." [(ngModel)]="search.searchQuery">
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input type="text" class="form-control" name="genre" placeholder="Search for..." [(ngModel)]="search.searchQuery">
+    </div>
+    <div class="form-group">
+      <label for="actors">Actors</label>
+      <input type="text" class="form-control" name="actors" placeholder="Search for..." [(ngModel)]="search.searchQuery">
+    </div>
+    <div class="form-group">
+      <label for="released">Released</label>
+      <select class="form-control" name="released" required>
+    <option *ngFor="let p of released" [value]="p">{{p}}</option>
+  </select>
+    </div>
 
-<div class="panel panel-default" *ngIf="search.response.Title">
-  <div class="panel-heading">{{ search.response.Title }}</div>
-  <div class="panel-body">
-    <p>{{ search.response.Plot }}</p>
+    <button class="btn btn-default" type="button" (click)="onSubmit()">Search!</button>
+  </form>
+
+
+  <div class="panel panel-default" *ngIf="search.response.Title">
+    <div class="panel-heading">{{ search.response.Title }}</div>
+    <div class="panel-body">
+      <p>{{ search.response.Plot }}</p>
+    </div>
+
+    <!-- List group -->
+    <ul class="list-group">
+      <li class="list-group-item">{{ search.response.Actors }}</li>
+      <li class="list-group-item">{{ search.response.Released }}</li>
+      <li class="list-group-item">{{ search.response.Genre }}</li>
+      <li class="list-group-item">{{ search.response.Awards }}</li>
+      <li class="list-group-item">{{ search.response.Language }}</li>
+    </ul>
+
+    <img src="{{ search.response.Poster }}" class="img-responsive">
+
   </div>
-
-  <!-- List group -->
-  <ul class="list-group">
-    <li class="list-group-item">{{ search.response.Actors }}</li>
-    <li class="list-group-item">{{ search.response.Released }}</li>
-    <li class="list-group-item">{{ search.response.Genre }}</li>
-    <li class="list-group-item">{{ search.response.Awards }}</li>
-    <li class="list-group-item">{{ search.response.Language }}</li>
-  </ul>
-
-  <img src="{{ search.response.Poster }}" class="img-responsive">
 
 </div>

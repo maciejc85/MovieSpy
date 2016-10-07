@@ -5,8 +5,7 @@ import { SearchService } from './search.service';
 @Component({
     selector: "search",
     templateUrl: "app/components/search/search.html",
-    styleUrls: ["app/components/search/search.css"],
-    //providers: [SearchService]
+    styleUrls: ["app/components/search/search.css"]
 })
 export class SearchComponent implements OnInit {
 

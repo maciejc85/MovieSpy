@@ -8,7 +8,7 @@ export class SearchService {
 
   constructor(private http: Http) { }
 
-  private searchUrl = 'app/api/movie.json' //'http://www.omdbapi.com/';
+  private searchUrl = 'app/api/movie.json'; //'http://www.omdbapi.com/';
   public searchHistory = [];
 
   searchMovies(searchQuery: string): Observable<any> {
