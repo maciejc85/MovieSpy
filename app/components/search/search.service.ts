@@ -8,7 +8,9 @@ export class SearchService {
 
   constructor(private http: Http) { }
 
-  private searchUrl = 'app/api/movie.json'; //'http://www.omdbapi.com/';
+  private searchUrl = 'http://www.omdbapi.com/';
+  private firebaseUrl = 'https://movie-spy-b15c0.firebaseio.com/';
+
   public searchHistory = [];
 
   searchMovies(searchQuery: string): Observable<any> {
@@ -18,8 +20,16 @@ export class SearchService {
   }
 
   getMovies(searchQuery: string): Observable<any> {
-    return this.http.get('app/api/movies.json').map(this.extractData);
+    return this.http.get('https://movie-spy-b15c0.firebaseio.com/movies.json').map(this.extractData);
   }
+
+  saveMovie(movie: string): Observable<any>{
+    return this.http.put('https://movie-spy-b15c0.firebaseio.com/movies/', movie, null).map(this.extractData);
+  }
+
+
+
+
 
   private extractData(res: Response) {
     let body = res.json();

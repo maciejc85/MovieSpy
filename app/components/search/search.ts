@@ -22,6 +22,14 @@ export class SearchComponent implements OnInit {
             response => {
                 this.search.response = response;
                 this.searchService.searchHistory.push(response);
+                
+                this.searchService.saveMovie(response).subscribe(response => {
+                    console.log(response);
+                }, error => {
+                    console.log(error);
+                })
+
+
                 console.log(this.searchService.searchHistory);
             },
             error => { this.search.error = <any>error; console.log(error); });
