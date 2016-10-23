@@ -20,20 +20,21 @@ export class SearchService {
   }
 
   getMovies(searchQuery: string): Observable<any> {
-    return this.http.get('https://movie-spy-b15c0.firebaseio.com/movies.json').map(this.extractData);
+    return this.http.get('https://movie-spy-b15c0.firebaseio.com/movies.json').map(this.extractObjectData);
   }
 
   saveMovie(movie: string): Observable<any>{
-    return this.http.put('https://movie-spy-b15c0.firebaseio.com/movies/', movie, null).map(this.extractData);
+    return this.http.post('https://movie-spy-b15c0.firebaseio.com/movies.json', movie, null).map(this.extractData);
   }
-
-
-
-
 
   private extractData(res: Response) {
     let body = res.json();
     return body || {};
+  }
+
+  private extractObjectData(res: Response){
+    let body = res.json();
+    return Object.values(body) || {};
   }
 
 
