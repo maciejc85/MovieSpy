@@ -12,8 +12,10 @@ import { DetailsComponent } from "./components/details/details";
 import { DashboardComponent } from "./components/dashboard/dashboard";
 import { TileComponents } from './components/tile/tile';
 
+import { CustomersModule } from './components/customers/customers.module';
+
 @NgModule({
-  imports: [BrowserModule, routing, FormsModule, HttpModule],
+  imports: [BrowserModule, routing, FormsModule, HttpModule, CustomersModule],
   declarations: [ AppComponent, 
                   TopnavComponent,
                   HomeComponent,

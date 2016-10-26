@@ -3,11 +3,13 @@ import {HomeComponent} from "./components/home/home";
 import {DetailsComponent} from "./components/details/details";
 import {DashboardComponent} from "./components/dashboard/dashboard";
 import {SearchComponent} from "./components/search/search";
+import { CustomersComponent} from "./components/customers/customers"
 
 const appRoutes: Routes = [
  { path: "home", component: HomeComponent },
  { path: "details", component: DetailsComponent },
  { path: "dashboard", component: DashboardComponent },
+   { path: "customers", component: CustomersComponent},
  { path: "search", component: SearchComponent },
   {
     path: "route1",

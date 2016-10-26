@@ -24,7 +24,8 @@ export class TopnavComponent {
     new NavItem(0, "Home", "home"),
     new NavItem(1, "Dashboard", "dashboard"),
     new NavItem(2, "Details", "details"),
-    new NavItem(3, "Search", "search")
+    new NavItem(3, "Search", "search"),
+    new NavItem(4, "Customers", "customers")
   ];
 
   navDrawer: NavDrawer = new NavDrawer(this.navItems, "closed");
