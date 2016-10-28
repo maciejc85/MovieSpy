@@ -2,15 +2,15 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 
-import { CustomersComponent }  from './customers';
+import { UserComponent }  from './user';
 
 @NgModule({
   imports: [
     FormsModule
   ],
   declarations: [
-    CustomersComponent
+    UserComponent
   ],
-  bootstrap: [ CustomersComponent ]
+  bootstrap: [ UserComponent ]
 })
-export class CustomersModule { }
+export class UserModule { }

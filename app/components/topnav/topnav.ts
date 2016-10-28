@@ -1,5 +1,4 @@
 import { Component, Input, trigger, state, style, transition, animate } from '@angular/core';
-//import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'topnav',
@@ -25,7 +24,7 @@ export class TopnavComponent {
     new NavItem(1, "Dashboard", "dashboard"),
     new NavItem(2, "Details", "details"),
     new NavItem(3, "Search", "search"),
-    new NavItem(4, "Customers", "customers")
+    new NavItem(4, "User", "user")
   ];
 
   navDrawer: NavDrawer = new NavDrawer(this.navItems, "closed");
