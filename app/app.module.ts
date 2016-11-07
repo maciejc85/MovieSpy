@@ -13,9 +13,10 @@ import { DashboardComponent } from "./components/dashboard/dashboard";
 import { TileComponents } from './components/tile/tile';
 
 import { UserModule } from './components/user/user.module';
+import { OrderModule } from './components/orders/orders.module'
 
 @NgModule({
-  imports: [BrowserModule, routing, FormsModule, HttpModule, UserModule],
+  imports: [BrowserModule, routing, FormsModule, HttpModule, UserModule, OrderModule],
   declarations: [ AppComponent, 
                   TopnavComponent,
                   HomeComponent,

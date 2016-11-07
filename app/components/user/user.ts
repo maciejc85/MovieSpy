@@ -17,7 +17,8 @@ export class UserComponent {
 
 
 export class User {
-  address: Address;
+  name: string;
+  address: Address = new Address();
   email: string;
   phone: string;
 }

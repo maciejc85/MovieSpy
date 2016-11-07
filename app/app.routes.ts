@@ -4,12 +4,14 @@ import {DetailsComponent} from "./components/details/details";
 import {DashboardComponent} from "./components/dashboard/dashboard";
 import {SearchComponent} from "./components/search/search";
 import { UserComponent} from "./components/user/user";
+import { OrdersComponent } from "./components/orders/orders"
 
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "details", component: DetailsComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "user", component: UserComponent },
+  { path: "orders", component: OrdersComponent },
   { path: "search", component: SearchComponent },
   {
     path: "route1",

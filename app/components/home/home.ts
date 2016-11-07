@@ -12,11 +12,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private searchService: SearchService) {
 
-
-    console.log(searchService.searchHistory);
-
-
-
   }
 
   ngOnInit() {
